@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="14" time="62.919">
+<testcase classname="user should be able to switch between currencies" name="user switch currency" time="1.244">
+<system-out><![CDATA[When user change currency...................................................passed
+Then currency switches successfully.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to open Follow Us Links" name="user opens fb link" time="8.455">
+<system-out><![CDATA[When user click on fb link..................................................passed
+Then fb is opened...........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to open Follow Us Links" name="user opens twitter link" time="3.77">
+<system-out><![CDATA[When user click on twitter link.............................................passed
+Then twitter is opened......................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to open Follow Us Links" name="user opens youtube link" time="9.543">
+<system-out><![CDATA[When user click on youtube link.............................................passed
+Then youtube is opened......................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to open Follow Us Links" name="user opens rss link" time="2.591">
+<failure message="expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[When user click on rss link.................................................passed
+Then rss is opened..........................................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at org.testng.Assert.assertTrue(Assert.java:66)
+	at org.example.BDD.FollowUsStepDef.rss_is_opened(FollowUsStepDef.java:94)
+	at ✽.rss is opened(file:///D:/fwd/AutomationProject/E-CommerceAppAutomation/src/main/Features/FollowUs.feature:22)
+]]></failure>
+</testcase>
+<testcase classname="user should be able to login to the system" name="user login with valid credentials" time="2.169">
+<failure message="expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[Given user open login page..................................................passed
+When user enters valid username and password................................passed
+Then user could login successfully..........................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at org.testng.Assert.assertTrue(Assert.java:66)
+	at org.example.BDD.LoginStepDef.user_could_login_successfully(LoginStepDef.java:38)
+	at ✽.user could login successfully(file:///D:/fwd/AutomationProject/E-CommerceAppAutomation/src/main/Features/Login.feature:8)
+]]></failure>
+</testcase>
+<testcase classname="user should be able to Register to the system" name="user Registration" time="3.79">
+<system-out><![CDATA[Given user open registration................................................passed
+When user enters valid registrations data...................................passed
+Then user could register successfully.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to search for a product" name="user search for a product using name" time="1.574">
+<system-out><![CDATA[When user search for a product with "Apple".................................passed
+Then product is found successfully..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to search for a product" name="user search for a product using sku" time="0.985">
+<system-out><![CDATA[When user search for a product with "AP_MBP_13".............................passed
+Then product is found successfully..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to add product to Shopping Cart" name="user add a product to Shopping Cart" time="6.086">
+<system-out><![CDATA[When user add a product to Shopping Cart....................................passed
+Then product is added successfully to Shopping Cart.........................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to add product to wishlist" name="user add a product to wishlist" time="3.674">
+<system-out><![CDATA[When user add a product to wishlist.........................................passed
+Then product is added successfully to wishlist..............................passed
+]]></system-out>
+</testcase>
+<testcase classname="user should be able to open sliders in home page" name="first slider is clickable" time="1.008">
+<failure message="expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[When user click on the first slider.........................................passed
+Then product on first slider is displayed...................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at org.testng.Assert.assertTrue(Assert.java:66)
+	at org.example.BDD.homeSlidersStepDef.product_on_first_slider_is_displayed(homeSlidersStepDef.java:23)
+	at ✽.product on first slider is displayed(file:///D:/fwd/AutomationProject/E-CommerceAppAutomation/src/main/Features/homeSliders.feature:8)
+]]></failure>
+</testcase>
+<testcase classname="user should be able to open sliders in home page" name="second slider is clickable" time="3.787">
+<failure message="expected [true] but found [false]" type="java.lang.AssertionError"><![CDATA[When user click on the second slider........................................passed
+Then product on second slider is displayed..................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at org.testng.Assert.assertTrue(Assert.java:66)
+	at org.example.BDD.homeSlidersStepDef.product_on_second_slider_is_displayed(homeSlidersStepDef.java:38)
+	at ✽.product on second slider is displayed(file:///D:/fwd/AutomationProject/E-CommerceAppAutomation/src/main/Features/homeSliders.feature:13)
+]]></failure>
+</testcase>
+<testcase classname="user should be able to hover and select different categories" name="user Select Category" time="1.546">
+<system-out><![CDATA[When user hover and select category.........................................passed
+Then category changes successfully..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>
