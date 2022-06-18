@@ -14,10 +14,14 @@ public class SearchPage extends PagesBase{
 
     public int getSearchResultSize()
     {
-        ArrayList <WebElement> elements = new ArrayList<WebElement>(driver.findElements(By.xpath("//div[@class='item-grid']//child::div[3]")));
+        ArrayList <WebElement> elements = new ArrayList<WebElement>(driver.findElements(By.xpath("//div[@class='item-box']")));
         //elements= (ArrayList<WebElement>) driver.findElements(By.xpath("//div[@class='item-grid']//child::div[3]"));
         int size =elements.size();
         System.out.println(size);
         return size;
     }
+
+
+
+
 }

@@ -26,7 +26,7 @@ public class SearchStepDef extends TestRunner {
         searchObj = new SearchPage(driver);
 
         Assert.assertTrue(driver.getCurrentUrl().contains("search?q"));
-        //Assert.assertTrue(searchObj.getSearchResultSize()>0);
+        Assert.assertTrue(searchObj.getSearchResultSize()>0);
 
     }
 

@@ -7,6 +7,7 @@ import org.example.Pages.HomePage;
 import org.example.runners.TestRunner;
 import org.testng.Assert;
 
+
 import java.util.ArrayList;
 
 public class FollowUsStepDef extends TestRunner {
@@ -30,6 +31,7 @@ public class FollowUsStepDef extends TestRunner {
         ArrayList<String> availableWindows= new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(availableWindows.get(1));
         Assert.assertTrue(driver.getCurrentUrl().contains("facebook"));
+        Assert.assertEquals(driver.getCurrentUrl(),"https://www.facebook.com/nopCommerce");
         driver.close();
         driver.switchTo().window(availableWindows.get(0));
 
@@ -52,6 +54,7 @@ public class FollowUsStepDef extends TestRunner {
         ArrayList<String> availableWindows= new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(availableWindows.get(1));
         Assert.assertTrue(driver.getCurrentUrl().contains("twitter"));
+        Assert.assertEquals(driver.getCurrentUrl(),"https://twitter.com/nopCommerce");
         driver.close();
         driver.switchTo().window(availableWindows.get(0));
     }
@@ -74,6 +77,7 @@ public class FollowUsStepDef extends TestRunner {
         ArrayList<String> availableWindows= new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(availableWindows.get(1));
         Assert.assertTrue(driver.getCurrentUrl().contains("youtube"));
+        Assert.assertEquals(driver.getCurrentUrl(),"https://www.youtube.com/user/nopCommerce");
         driver.close();
         driver.switchTo().window(availableWindows.get(0));
     }
@@ -89,11 +93,10 @@ public class FollowUsStepDef extends TestRunner {
     @Then("rss is opened")
     public void rss_is_opened() {
         homeObj = new HomePage(driver);
-        //homeObj.switchTabByIndex(1);
+        Assert.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/new-online-store-is-open");
+        driver.close();
         ArrayList<String> availableWindows= new ArrayList<String>(driver.getWindowHandles());
-        Assert.assertTrue(availableWindows.size()>1);
-        //driver.close();
-        //driver.switchTo().window(availableWindows.get(0));
+        driver.switchTo().window(availableWindows.get(0));
     }
 
 

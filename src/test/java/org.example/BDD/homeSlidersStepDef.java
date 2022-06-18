@@ -20,7 +20,7 @@ public class homeSlidersStepDef extends TestRunner {
     public void product_on_first_slider_is_displayed() {
 
         homeObj = new HomePage(driver);
-        Assert.assertTrue(driver.getCurrentUrl().contains("iphone"));
+        Assert.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/nokia-lumia-1020");
 
     }
 
@@ -35,7 +35,7 @@ public class homeSlidersStepDef extends TestRunner {
     @Then("product on second slider is displayed")
     public void product_on_second_slider_is_displayed() {
         homeObj = new HomePage(driver);
-        Assert.assertTrue(driver.getCurrentUrl().contains("nokia"));
+        Assert.assertEquals(driver.getCurrentUrl(),"https://demo.nopcommerce.com/iphone-6");
 
     }
 

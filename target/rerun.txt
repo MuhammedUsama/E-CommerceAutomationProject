@@ -1,3 +1,0 @@
-file:src/main/Features/FollowUs.feature:20
-file:src/main/Features/homeSliders.feature:6:11
-file:src/main/Features/Login.feature:5

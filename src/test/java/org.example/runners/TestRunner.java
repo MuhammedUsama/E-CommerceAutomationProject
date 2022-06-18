@@ -35,32 +35,34 @@ import java.util.concurrent.TimeUnit;
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
+
     public static WebDriver driver=null;
 
 
-   @BeforeSuite
+    @BeforeSuite
     public void Start()
-   {
-       String Chromepath=System.getProperty("user.dir")+"/src/main/resources/chromedriver.exe";
-       System.setProperty("webdriver.chrome.driver", Chromepath);
-       driver= new ChromeDriver();
-       driver.manage().window().maximize();
-       driver.navigate().to("https://demo.nopcommerce.com/");
-       driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    {
+        String Chromepath=System.getProperty("user.dir")+"/src/main/resources/chromedriver.exe";
+        System.setProperty("webdriver.chrome.driver", Chromepath);
+        driver= new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.navigate().to("https://demo.nopcommerce.com/");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
-   }
-   @AfterMethod
-   public void smokeBackToHome()
-   {
-       driver.navigate().to("https://demo.nopcommerce.com/");
-   }
+    }
+    @AfterMethod
+    public void smokeBackToHome()
+    {
+        driver.navigate().to("https://demo.nopcommerce.com/");
+    }
 
 
-   @AfterSuite
+    @AfterSuite
     public void End()
-   {
-       //driver.quit();
-   }
+    {
+        driver.quit();
+    }
+
 
 }

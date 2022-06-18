@@ -3,6 +3,7 @@ package org.example.Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
 
@@ -21,16 +22,16 @@ public class HomePage extends PagesBase{
     @FindBy(xpath = "//a[@class='ico-register']")
     WebElement registerBtn;
 
-    @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[1]")
+    @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[2]")
     WebElement firstSlider;
 
-    @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[2]")
+    @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[1]")
     WebElement secondSlider;
 
     @FindBy(id="customerCurrency")
     WebElement currency;
 
-    @FindBy(xpath = "//span[@class='price actual-price']")
+    @FindBy(id = "price-value-4")
     WebElement Product_price;
 
     @FindBy(xpath = "//ul[@class='top-menu notmobile']/li[1]/a")
@@ -39,11 +40,16 @@ public class HomePage extends PagesBase{
     @FindBy(xpath = "//ul[@class='top-menu notmobile']/li[1]/ul/li[1]/a")
     WebElement DesktopsHover;
 
+
+
     @FindBy(id="small-searchterms")
     WebElement searchTextField;
 
     @FindBy(xpath= "//button[@type='submit']")
     WebElement searchButton;
+
+    @FindBy(xpath = "//div[@class='item-box'][1]")
+    WebElement firstSearchResult;
 
     @FindBy(linkText = "Facebook")
     WebElement fbLink;
@@ -106,9 +112,12 @@ public class HomePage extends PagesBase{
     {secondSlider.click();}
 
 
-    public WebElement getCurrency()
+    public void ChangeCurreny(String text)
     {
-        return currency;
+
+        Select select= new Select(currency);
+        select.selectByVisibleText(text);
+
     }
 
     public WebElement getProduct_price()
@@ -130,6 +139,10 @@ public class HomePage extends PagesBase{
     {
         searchTextField.sendKeys(s);
         searchButton.click();
+    }
+    public void OpenProductAfterSearch()
+    {
+        firstSearchResult.click();
     }
 
     public void OpenfbLink()
