@@ -5,7 +5,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.HomePage;
 import org.example.runners.TestRunner;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+
+import java.util.List;
 
 
 public class CurrenciesStepDef extends TestRunner {
@@ -23,9 +26,15 @@ public class CurrenciesStepDef extends TestRunner {
 
 
         homeObj = new HomePage(driver);
-        homeObj.search("Apple MacBook Pro 13-inch");
-        homeObj.OpenProductAfterSearch();
-        Assert.assertTrue(homeObj.getProduct_price().getText().contains("€"));
+        int size=homeObj.getHomeProductsTableSize();
+        List <WebElement> ProductsPrices= homeObj.getHomeProductsTablePrices();
+        for(int i=0;i<size;i++)
+        {
+            Assert.assertTrue(ProductsPrices.get(i).getText().contains("€"));
+
+        }
+
+
 
     }
 

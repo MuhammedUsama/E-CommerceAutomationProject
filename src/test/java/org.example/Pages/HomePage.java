@@ -1,11 +1,13 @@
 package org.example.Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomePage extends PagesBase{
 
@@ -86,6 +88,7 @@ public class HomePage extends PagesBase{
 
     @FindBy(linkText = "shopping cart")
     WebElement ShoppingCart;
+
 
 
 
@@ -214,6 +217,21 @@ public class HomePage extends PagesBase{
 
     public void OpenShoppingCart()
     {ShoppingCart.click();}
+
+    public int getHomeProductsTableSize()
+    {
+        List<WebElement> elements = driver.findElements(By.cssSelector("span[class=\"price actual-price\"]"));
+        //elements= (ArrayList<WebElement>) driver.findElements(By.xpath("//div[@class='item-grid']//child::div[3]"));
+        int size =elements.size();
+        System.out.println(size);
+        return size;
+    }
+
+    public List getHomeProductsTablePrices()
+    {
+        List<WebElement> elements = driver.findElements(By.cssSelector("span[class=\"price actual-price\"]"));
+        return elements;
+    }
 
 
 
